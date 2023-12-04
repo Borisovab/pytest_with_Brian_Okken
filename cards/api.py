@@ -2,10 +2,10 @@ from dataclasses import dataclass, field, asdict
 
 @dataclass 
 class Card:
-    summary: str = None
-    owner: str = None
+    summary: str = 'None'
+    owner: str = 'owner'
     state: str = 'todo'
-    id: int = field(default=None, compare=False)
+    id: int = field(default=None, compare=True)
 
     @classmethod
     def from_dict(cls, d):
@@ -14,3 +14,28 @@ class Card:
 
     def to_dict(self):
         return asdict(self)
+    
+
+
+
+
+
+
+
+# ===========================
+# from dataclasses import dataclass, field, asdict
+
+# @dataclass 
+# class Card:
+#     summary: str = None
+#     owner: str = None
+#     state: str = 'todo'
+#     id: int = field(default=None, compare=False)
+
+#     @classmethod
+#     def from_dict(cls, d):
+#         return Card(**d)
+    
+
+#     def to_dict(self):
+#         return asdict(self)
