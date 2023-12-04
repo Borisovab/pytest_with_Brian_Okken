@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field, asdict
 
+@dataclass 
 class Card:
     summary: str = None
     owner: str = None
@@ -13,7 +14,3 @@ class Card:
 
     def to_dict(self):
         return asdict(self)
-
-
-
-
