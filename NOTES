@@ -1,0 +1,62 @@
+<!-- Here are the possible outcomes of a test: -->
+    PASSED (.) — The test ran successfully.
+
+    FAILED (F) — The test did not run successfully.
+
+    SKIPPED (s) — The test was skipped.
+        (You can tell pytest to skip a test by using either the @pytest.mark.skip() or @pytest.mark.skipif() decorators)
+
+    XFAIL (x) — The test was not supposed to pass, and it ran and failed. 
+        (You can tell pytest that a test is expected to fail by using the @pytest.mark.xfail() decorator)
+
+    XPASS (X) — The test was marked with xfail, but it ran and passed.
+
+    ERROR (E) — An exception happened either during the execution of a fixture or hook function, and not during the execution of a test function
+
+
+<!-- Test discovery refers to how pytest finds your test code and depends on naming: -->
+(pytest test_two.py)
+
+    – Test files should be named test_<something>.py or <something>_test.py. 
+    – Test methods and functions should be named test_<something>.
+    – Test classes should be named Test<Something>.
+
+
+<!-- The -v or --verbose  -->
+    command-line flag is used to reveal more verbose output.
+
+<!-- The --tb=no -->
+    command-line flag is used to turn off tracebacks.
+
+
+
+
+<!-- Testing for Expected Exceptions -->
+    You use pytest.raises() to test for expected exceptions.
+
+
+
+<!-- Structuring Test Functions -->
+    There are many benefits of separating into stages. The separation clearly separates the “getting ready to do something,” the “doing something,” and the “checking to see if it worked” parts of the test. That allows the test developer to focus attention on each part, and be clear about what is really being tested.
+
+    <!-- The three-stage structure -->
+        Sticking to 
+            Given-When-Then 
+            or 
+            Arrange-Act-Assert 
+        keeps the test focused and makes the test more maintainable.
+
+
+        • Given/Arrange — A starting state. This is where you set up data or the environment to get ready for the action.
+        
+        • When/Act—Some action is performed. This is the focus of the test—the behavior we are trying to make sure is working right.
+        
+        • Then/Assert—Some expected result or end state should happen. At the end of the test, we make sure the action resulted in the expected behavior.
+
+
+<!-- Classes can be used to group tests. -->
+
+
+<!-- The -vv command-line flag shows even more information during test failures. -->
+
+
